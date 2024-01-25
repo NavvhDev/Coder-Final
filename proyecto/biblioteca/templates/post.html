@@ -1,0 +1,16 @@
+{% extends 'index.html' %}
+{% load static %}
+
+{% block titulo %}
+    {{ post_detail.titulo }}
+{% endblock titulo %}
+
+{% block titulo_principal %}
+    <h1>{{ post_detail.titulo }}</h1>
+    <p>{{ post_detail.descripcion }}</p>
+{% endblock titulo_principal %}
+
+{% block contenido %}
+    <img src="{% static post_detail.imagen.url %}" alt="{{ post_detail.titulo }}">
+    <p>{{ post_detail.contenido | safe }}</p>
+{% endblock contenido %}
